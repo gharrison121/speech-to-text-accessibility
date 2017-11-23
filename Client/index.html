@@ -316,17 +316,14 @@
         }
 
         function UpdateRecognizedPhrase(json) {
-            console.log(json);
             hypothesisDiv.innerHTML = "";
-            //old line
-            // phraseDiv.innerHTML += json + "\n";
-
-            /*Should append all DisplayText together in one block because this
-            function takes a stringified json, errors if not parsed for some reason
+            console.log(json)
+            /*Should append all DisplayText together in one block
             */
             phraseDiv.innerHTML += JSON.parse(json).DisplayText + "\n";
 
-            /* Should open post request to the server containing the json
+            /* Calls function postToServer which
+            opens a post request to the server containing the json
             */
             postToServer(json)
         }
@@ -338,12 +335,10 @@
 
 
         function postToServer(json) {
-
           var xhr = new XMLHttpRequest;
           xhr.open("POST", "/speech")
           xhr.setRequestHeader('Content-Type', 'application/json')
           xhr.send(json)
-          console.log("Modified JSON", json)
         }
     </script>
 </body>

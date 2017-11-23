@@ -1,0 +1,54 @@
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+
+body {
+
+	background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, white, #f2e6d9); /* Standard syntax (must be last) */
+	font-family: Tahoma;
+	font-size: 100%;
+	margin: 0 0 50px;
+	padding-bottom: 0.01em;
+}
+
+article {
+
+	margin: 5% 7% 5% 7%;
+	padding: 5%;
+	text-align: left;
+	font-size: 100%;
+	background-color: white;
+}
+
+
+/*footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+
+	background-color: #4d2600;
+	text-align: center;
+	display: inline-block;
+	border-style: double none none none;
+	border-color: #ffffb3;
+}*/
+
+#Output {
+	font-size: 110%;
+	display: inline-block;
+	text-align: left;
+	color: blue;
+}
+
+#Text {
+	white-space: pre-line;
+}

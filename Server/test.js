@@ -2,10 +2,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser')
-
+var outputText = "Lecture text below" + "\r\n"
 app.use(express.static(__dirname + '/../Client'));
-
-
 
 
 app.get('/', function(req, res){
@@ -14,10 +12,30 @@ app.get('/', function(req, res){
 
 var jsonParser = bodyParser.json()
 
-app.post('/speech', jsonParser, function(req, res){
-  console.log(req.body)
+app.get('/getOutput', function(req, res) {
+  // var output = outputCompiler()
+  res.send(outputText)
+
+})
+
+
+app.post('/speech', jsonParser, function(req, res) {
+  if(req.body.RecognitionStatus != "Success") {
+    //create file with the stuff
+  }
+
+  if(req.body.DisplayText) {
+    console.log("POST COMPLETE: " + req.body.DisplayText)
+    outputText += req.body.DisplayText + " "
+  }
   res.sendStatus(200)
 });
+
+// function outputCompiler(output) {
+//   console.log("PARSE COMPLETE: " + output)
+//   return output;
+// }
+
 
 app.listen(8080, printListen);
 
