@@ -5,12 +5,11 @@ html {
 
 
 body {
-
 	background: white; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom, white, #f2e6d9); /* Standard syntax (must be last) */
+  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, white, #f2e6d9); /* Standard syntax (must be last) */
 	font-family: Tahoma;
 	font-size: 100%;
 	margin: 0 0 50px;
@@ -18,7 +17,6 @@ body {
 }
 
 article {
-
 	margin: 5% 7% 5% 7%;
 	padding: 5%;
 	text-align: left;
@@ -34,6 +32,10 @@ article {
 	color: blue;
 }
 
-#Text {
+#outputtext {
+	padding: 1%;
 	white-space: pre-line;
+	background-color: #e6e6e6;
+	border-radius: 2mm;
+	word-wrap: break-word;
 }

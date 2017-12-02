@@ -10,11 +10,10 @@
 
   <article>
   <h1 id ="Output">Output</h1>
-	<p> Lecture text below</p>
-  <p id="outputtext"></p>
+	<p>Lecture text below</p>
+  <section id="outputtext"></section>
 
-	<form onsubmit="download(name.value)">
-		<input type="text" name="name" value="test.txt">
-		<input type="submit" value="Download">
-	</form>
+	<p>Filename to save <input id="dlname" type="text" name="name" value="test.txt">
+	<button onclick="downloadText()">Download</button>
+	</p>
   </article>
