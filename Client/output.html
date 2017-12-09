@@ -5,15 +5,34 @@
 		<meta charset=UTF-8>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Output Page</title>
-		<script src= "utility.js"></script>
+		<script src= "index.js"></script>
 	</head>
 
-  <article>
-  <h1 id ="Output">Output</h1>
-	<p>Lecture text below</p>
-  <section id="outputtext"></section>
+	<nav>
+	  <ul id="navmenu">
+	    <li><a href="index.html">Recording</a></li>
+	    <li><a href="output.html">Output</a></li>
+	  </ul>
+	</nav>
 
-	<p>Filename to save <input id="dlname" type="text" name="name" value="test.txt">
-	<button onclick="downloadText()">Download</button>
-	</p>
+  <article>
+	  <h1 id ="Output">Output</h1>
+		<div id="dropdown">
+			<button id="dropbtn" onclick="dropdownClick()">Options</button>
+			<div id="options" class="option-content">
+				<p id="fontSize">Font Size: 12</p>
+				<input id="sizeSlider" type="range" min="12" max="32" value="12"
+				step="2" oninput="changeFontSize(value)">
+			</div>
+		</div>
+
+		<!-- Where outputted speech-to-text will go -->
+		<p>Lecture text below</p>
+	  <section id="outputtext">Text here for the purpose of testing
+		</section>
+
+		<!-- Download Button -->
+		<p>Save As <input id="dlname" type="text" name="name" value="filename.txt">
+		<button onclick="downloadText()">Download</button>
+		</p>
   </article>

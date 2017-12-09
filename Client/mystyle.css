@@ -3,15 +3,44 @@ html {
 	position: relative;
 }
 
+/* Navigation Content*/
+nav {
+	font-size: 16pt;
+  width: 100%;
+  background-color: #1D1D1E;
+}
+
+ul#navmenu {
+	display: inline-block;
+  list-style-type: none;
+  margin: 0em;
+  overflow: hidden;
+}
+
+ul#navmenu li {
+  float: left;
+}
+
+ul#navmenu li a {
+  display: inline-block;
+	color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+ul#navmenu li a:hover {
+	color: #D1D3D5;
+}
 
 body {
-	background: white; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, white, #f2e6d9); /* Standard syntax (must be last) */
-	font-family: Tahoma;
+	background-color: #F2F3F4; /* For browsers that do not support gradients */
+  /*background: -webkit-linear-gradient(left top, red, yellow);
+  background: -o-linear-gradient(bottom right, red, yellow);
+  background: -moz-linear-gradient(bottom right, red, yellow);
+  background: linear-gradient(to bottom, white, #f2e6d9);*/
+	font-family: Helvetica;
 	font-size: 100%;
+	color: #343535;
 	margin: 0 0 50px;
 	padding-bottom: 0.01em;
 }
@@ -22,20 +51,58 @@ article {
 	text-align: left;
 	font-size: 100%;
 	background-color: white;
+	border: 1px solid #B2BABB;
+	border-radius: 1mm;
 }
-
 
 #Output {
 	font-size: 110%;
 	display: inline-block;
 	text-align: left;
-	color: blue;
+	color: #154360;
 }
 
 #outputtext {
+	font-size: 12pt;
 	padding: 1%;
 	white-space: pre-line;
-	background-color: #e6e6e6;
-	border-radius: 2mm;
-	word-wrap: break-word;
+	background-color: #F2F3F4;
+	border-left: 5px solid;
+	/*word-wrap: break-word;*/
+}
+
+
+/* option container */
+#dropdown {
+    position: relative;
+    display: inline-block;
+		float: right;
+}
+
+/* Dropdown Button */
+#dropbtn {
+    background-color: #2471A3;
+    color: white;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+#dropbtn:hover, #dropbtn:focus {
+    background-color: #154360;
+}
+
+/* Dropdown Content */
+.option-content {
+    display: none;
+    position: absolute;
+    background-color: #154360;
+		color: white;
+    min-width: 160px;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.show {
+	display: block;
 }

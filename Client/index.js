@@ -63,9 +63,19 @@ function downloadText() {
   document.body.removeChild(downloadLink);
 }
 
+function dropdownClick() {
+  document.getElementById("options").classList.toggle("show");
+}
+
 document.addEventListener("DOMContentLoaded", getFullOutput())
 
+function changeFontSize(val) {
+  document.getElementById("fontSize").textContent = "Font Size:" + val
+  var text = document.getElementById("outputtext")
+  text.style.fontSize = val + "pt";
+}
+
 /*
-Could make this so it only functions when someone is speaking
+Run getOutput every 6 seconds
 */
 setInterval(getOutput, 6000)

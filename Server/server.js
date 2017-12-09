@@ -24,7 +24,7 @@ app.get('/getOutput', function(req, res) {
 
 app.get('/getFullOutput', function(req, res) {
   res.send(speechArray)
-  outputText ="" // avoid duplication on first load
+  outputText = "" // avoid duplication on first load
 });
 
 /*
