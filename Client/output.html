@@ -17,12 +17,20 @@
 
   <article>
 	  <h1 id ="Output">Output</h1>
+		<!-- Options Menu -->
 		<div id="dropdown">
 			<button id="dropbtn" onclick="dropdownClick()">Options</button>
 			<div id="options" class="option-content">
 				<p id="fontSize">Font Size: 12</p>
 				<input id="sizeSlider" type="range" min="12" max="32" value="12"
 				step="2" oninput="changeFontSize(value)">
+
+				<p id="subtitles">Toggle Subtitles</p>
+				<label>
+				  <input id="switch" type="checkbox">
+				</label>
+
+
 			</div>
 		</div>
 
@@ -35,4 +43,8 @@
 		<p>Save As <input id="dlname" type="text" name="name" value="filename.txt">
 		<button onclick="downloadText()">Download</button>
 		</p>
+
+		<!-- Subtitles -->
+		<div id="subtext">Test subtitle</div>
+
   </article>

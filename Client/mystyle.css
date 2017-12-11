@@ -33,11 +33,7 @@ ul#navmenu li a:hover {
 }
 
 body {
-	background-color: #F2F3F4; /* For browsers that do not support gradients */
-  /*background: -webkit-linear-gradient(left top, red, yellow);
-  background: -o-linear-gradient(bottom right, red, yellow);
-  background: -moz-linear-gradient(bottom right, red, yellow);
-  background: linear-gradient(to bottom, white, #f2e6d9);*/
+	background-color: #F2F3F4;
 	font-family: Helvetica;
 	font-size: 100%;
 	color: #343535;
@@ -68,7 +64,6 @@ article {
 	white-space: pre-line;
 	background-color: #F2F3F4;
 	border-left: 5px solid;
-	/*word-wrap: break-word;*/
 }
 
 
@@ -105,4 +100,27 @@ article {
 
 .show {
 	display: block;
+}
+
+#subtext {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#subtext.show {
+    visibility: visible;
+
+/* Animation*/
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.5s;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }

@@ -10,10 +10,11 @@ function getOutput() {
   xhr.onreadystatechange = function () {
     if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
       if(xhr.responseText != arrayOnLoad[arrayOnLoad.length -1]) {
-        if (xhr.responseText != "undefined") {
-          // document.getElementById("outputtext").innerHTML = xhr.responseText;
+        if (xhr.responseText != "undefined" && xhr.responseText != "") {
+          //create text node from the resonse text
           var text = document.createTextNode(xhr.responseText);
           document.getElementById("outputtext").appendChild(text);
+          showSubtitles(text)
         }
       }
     }
@@ -36,11 +37,6 @@ function getFullOutput() {
         var text = document.createTextNode(responseArray[i] + " ");
         document.getElementById("outputtext").appendChild(text)
       }
-      // if (xhr.responseText != "undefined") {
-        // document.getElementById("outputtext").innerHTML = xhr.responseText;
-        // var text = document.createTextNode(xhr.responseText);
-        // document.getElementById("outputtext").appendChild(text);
-      // }
     }
   }
   xhr.send();
@@ -57,9 +53,7 @@ function downloadText() {
   downloadLink.href = textURL;
   downloadLink.style.display = "none";
   document.body.appendChild(downloadLink);
-
   downloadLink.click();
-
   document.body.removeChild(downloadLink);
 }
 
@@ -73,6 +67,22 @@ function changeFontSize(val) {
   document.getElementById("fontSize").textContent = "Font Size:" + val
   var text = document.getElementById("outputtext")
   text.style.fontSize = val + "pt";
+}
+
+function showSubtitles(text) {
+  if(document.getElementById("switch").checked) {
+    console.log("this has run", text.textContent)
+    //Set set of subtitles to the output text
+    var subs = document.getElementById("subtext")
+    subs.textContent = text.textContent
+    //Make subtitle visible
+    subs.className = "show";
+    //Hide subtitle after 5 seconds
+    setTimeout(function() { subs.className=subs.className.replace("show", ""); },
+                          5000);
+  } else {
+    console.log("switch is off")
+  }
 }
 
 /*
