@@ -2,28 +2,39 @@
 <html>
 <head>
     <title>Speech Sample</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <meta charset="utf-8" />
 </head>
-<body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px;">
+
+<nav>
+  <ul id="navmenu">
+    <li><a href="index.html">Recording</a></li>
+    <li><a href="output.html">Output</a></li>
+  </ul>
+</nav>
+
+<body>
+  <section id="windowURL">
+    <p>Output can be found at:
+  </section>
     <table width="100%">
         <tr>
             <td></td>
             <td>
                 <h1 style="font-weight:500;">Speech Recognition</h1>
-                <h2 style="font-weight:500;">Microsoft Cognitive Services</h2>
             </td>
         </tr>
         <tr>
             <td align="right"><a href="https://www.microsoft.com/cognitive-services/en-us/sign-up" target="_blank">Subscription</a>:</td>
-            <td><input id="key" type="text" size="40" value="24da06b4fa324716a1de71ae3f6d9c43"></td>
+            <td><input id="key" type="text" size="40" value="6d75822a12894cfa82424091618b0ae5"></td>
         </tr>
         <tr>
             <td align="right">Language:</td>
             <td align="left">
                 <select id="languageOptions">
                     <option value="zh-CN">Chinese - CN</option>
-                    <option value="en-GB">English - GB</option>
-                    <option value="en-US" selected="selected">English - US</option>
+                    <option value="en-GB" selected="selected">English - GB</option>
+                    <option value="en-US">English - US</option>
                     <option value="fr-FR">French - FR</option>
                     <option value="de-DE">German - DE</option>
                     <option value="it-IT">Italian - IT</option>
@@ -37,7 +48,7 @@
                 <select id="recognitionMode">
                     <option value="Interactive">Interactive</option>
                     <option value="Conversation">Conversation</option>
-                    <option value="Dictation">Dictation</option>
+                    <option value="Dictation" selected="selected">Dictation</option>
                 </select>
             </td>
         </tr>
@@ -152,7 +163,7 @@
                  if (event instanceof SDK.RecognitionTriggeredEvent)
                 */
 
-                console.log('Beginning reognition');
+                console.log('Beginning recognition');
                 switch (event.Name) {
                     case "RecognitionTriggeredEvent" :
                         UpdateStatus("Initializing");
@@ -317,13 +328,36 @@
 
         function UpdateRecognizedPhrase(json) {
             hypothesisDiv.innerHTML = "";
-            phraseDiv.innerHTML += json + "\n";
+            console.log(json)
+            /*Should append all DisplayText together in one block
+            */
+            phraseDiv.innerHTML += JSON.parse(json).DisplayText + "\n";
+
+            /* Calls function postToServer which
+            opens a post request to the server containing the json
+            */
+            postToServer(json)
         }
 
         function OnComplete() {
             startBtn.disabled = false;
             stopBtn.disabled = true;
         }
+
+
+        function postToServer(json) {
+          var xhr = new XMLHttpRequest;
+          xhr.open("POST", "/speech")
+          xhr.setRequestHeader('Content-Type', 'application/json')
+          xhr.send(json)
+        }
+
+        function displayURL() {
+          var urlTo = document.getElementById("windowURL")
+          urlTo.innerHTML += "\n" + window.location.hostname + "/output.html"
+        }
+
+        document.addEventListener("DOMContentLoaded", displayURL())
     </script>
 </body>
 </html>
