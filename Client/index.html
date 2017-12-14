@@ -15,9 +15,6 @@
 </nav>
 
 <body>
-  <section id="windowURL">
-    <p>Output can be found at:
-  </section>
     <table width="100%">
         <tr>
             <td></td>
@@ -95,7 +92,7 @@
             <td align="left"><span id="statusDiv"></span></td>
         </tr>
     </table>
-
+    <p id="windowURL">Output can be found at:</p>
     <!-- The SDK has a dependency on requirejs (http://requirejs.org/). -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
 
@@ -347,7 +344,7 @@
 
         function displayURL() {
           var urlTo = document.getElementById("windowURL")
-          urlTo.innerHTML += "\n" + window.location.hostname + "/output.html"
+          urlTo.textContent += " " + window.location.hostname + "/output.html"
         }
         document.addEventListener("DOMContentLoaded", displayURL())
     </script>

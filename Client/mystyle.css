@@ -4,11 +4,6 @@ html {
 }
 /* Window URL - index.html*/
 #windowURL {
-
-	display: block;
-	position: absolute;
-	top: 1em;
-	right: 3em;
 	font-size: 32pt;
 }
 
