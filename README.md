@@ -1,4 +1,4 @@
-#Speech To Text for the hard of hearing
+# Speech To Text for the hard of hearing
 
 "index.html" is a modified sample Bing Speech API file retrieved from Microsoft which utilises the speech recognition SDK.
 The modifications include changing default configuration options and functions to open a POST request to a server hosted with server.js
