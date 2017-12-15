@@ -5,4 +5,4 @@ The modifications include changing default configuration options and functions t
 as well as displaying a URL to the page which contains the outputted speech-to-text.
 
 
-There does exist an issue where the speech recognition will not initially work and may take many refreshes before functioning as it should. This may be an issue with the API.
+There does exist an issue where the speech recognition will not initially work and may take many refreshes before functioning as it should. This may be an issue with Mozilla Firefox. 
